@@ -7,12 +7,12 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 const CORE_PROVIDERS = [
   ...DataModule.forRoot().providers,
   ...UtilsModule.forRoot().providers,
-  ...NetModule.forRoot().providers
+  ...NetModule.forRoot().providers,
 ];
 
 @NgModule({
   exports: [DataModule, UtilsModule, NetModule],
-  providers: []
+  providers: [...CORE_PROVIDERS]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

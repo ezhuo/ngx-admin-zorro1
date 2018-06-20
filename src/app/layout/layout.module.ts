@@ -31,7 +31,6 @@ const HEADERCOMPONENTS = [
 ];
 
 // passport
-// import { LayoutPassportComponent } from './passport/passport.component';
 const PASSPORT = [];
 
 @NgModule({

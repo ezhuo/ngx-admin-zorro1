@@ -13,7 +13,7 @@ const routes: Routes = [
   // 全屏布局
   {
     path: 'data-v',
-    loadChildren: './routes/data-v/data-v.module#DataVModule'
+    loadChildren: './routes/ngalain/data-v/data-v.module#DataVModule'
   },
   // passport
   {

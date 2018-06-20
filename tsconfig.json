@@ -58,7 +58,13 @@
       ],
       "@helpers/*": [
         "app/core/helpers/*"
-      ]
+      ],
+      "@routes": [
+        "app/routes/"
+      ],
+      "@routes/*": [
+        "app/routes/*"
+      ],
     }
   }
 }

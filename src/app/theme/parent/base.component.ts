@@ -7,35 +7,38 @@ import { StateService } from '@core/data/state.service';
 import { AuthService } from '@core/data/auth.service';
 
 @Component({
-  selector: 'app-base-component',
+  selector: 'com-base-component',
   template: ``,
-  styles: [``]
 })
 export class BaseComponent implements OnInit, OnDestroy {
 
   constructor(protected injector: Injector) { }
 
-  get modal() {
+  get modalSrv() {
     return this.injector.get(ModalService);
   }
 
-  get notice() {
+  get noticeSrv() {
     return this.injector.get(NoticeService);
   }
 
-  get sweet() {
+  get msgSrv() {
+    return this.injector.get(NoticeService);
+  }
+
+  get sweetSrv() {
     return this.injector.get(SweetAlertService);
   }
 
-  get http() {
+  get httpSrv() {
     return this.injector.get(HttpService);
   }
 
-  get state() {
+  get stateSrv() {
     return this.injector.get(StateService);
   }
 
-  get auth() {
+  get authSrv() {
     return this.injector.get(AuthService);
   }
 

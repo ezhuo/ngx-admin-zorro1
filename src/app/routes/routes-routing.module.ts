@@ -5,11 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 
 // dashboard pages
-import { DashboardV1Component } from './dashboard/v1/v1.component';
-import { DashboardAnalysisComponent } from './dashboard/analysis/analysis.component';
-import { DashboardMonitorComponent } from './dashboard/monitor/monitor.component';
-import { DashboardWorkplaceComponent } from './dashboard/workplace/workplace.component';
-
+import { DashboardV1Component } from './ngalain/dashboard/v1/v1.component';
+import { DashboardAnalysisComponent } from './ngalain/dashboard/analysis/analysis.component';
+import { DashboardMonitorComponent } from './ngalain/dashboard/monitor/monitor.component';
+import { DashboardWorkplaceComponent } from './ngalain/dashboard/workplace/workplace.component';
 
 const routes: Routes = [
   {
@@ -24,12 +23,13 @@ const routes: Routes = [
       { path: 'dashboard/workplace', component: DashboardWorkplaceComponent },
       {
         path: 'widgets',
-        loadChildren: './widgets/widgets.module#WidgetsModule',
+        loadChildren: './ngalain/widgets/widgets.module#WidgetsModule',
       },
-      { path: 'style', loadChildren: './style/style.module#StyleModule' },
-      { path: 'delon', loadChildren: './delon/delon.module#DelonModule' },
-      { path: 'extras', loadChildren: './extras/extras.module#ExtrasModule' },
-      { path: 'pro', loadChildren: './pro/pro.module#ProModule' },
+      { path: 'style', loadChildren: './ngalain/style/style.module#StyleModule' },
+      { path: 'delon', loadChildren: './ngalain/delon/delon.module#DelonModule' },
+      { path: 'extras', loadChildren: './ngalain/extras/extras.module#ExtrasModule' },
+      { path: 'pro', loadChildren: './ngalain/pro/pro.module#ProModule' },
+      { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
     ],
   }
 ];

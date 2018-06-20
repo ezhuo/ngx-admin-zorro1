@@ -464,8 +464,11 @@ export class HttpService {
     if (options) {
       if (options.params) options.params = this.parseParams(options.params);
     }
-    if (!url.includes('./')) {
+    if (!url.includes('./') && !url.includes('mock/')) {
       url = this.SERVER_URL + url;
+    }
+    if (url.includes('/mock/')) {
+      url = url.replace('/mock/', '/');
     }
     return this.http.request(method, url, options).pipe(
       tap((res) => {

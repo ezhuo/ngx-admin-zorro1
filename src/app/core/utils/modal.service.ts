@@ -52,6 +52,7 @@ export class ModalService {
                 nzFooter: null,
                 nzComponentParams: params,
                 nzZIndex: ++this.zIndex,
+                nzStyle: { top: '20px' },
             };
             const subject = this.srv.create(Object.assign(defaultOptions, options));
             const afterClose$ = subject.afterClose.subscribe((res: any) => {

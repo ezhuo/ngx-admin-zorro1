@@ -11,15 +11,13 @@ import { DelonFormModule } from '@delon/form';
 // region: third libs
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
-import { UEditorModule } from 'ngx-ueditor';
-import { NgxTinymceModule } from 'ngx-tinymce';
-import { SelfDefineModule } from '@shared/self-define.module';
+import { SharedDefineModule } from '@shared/shared-define.module';
+import { ThirdComponentModuleList } from '@shared/third-component.module';
 
 const THIRDMODULES = [
   NgZorroAntdModule,
   CountdownModule,
-  UEditorModule,
-  NgxTinymceModule,
+  ...ThirdComponentModuleList
 ];
 // endregion
 
@@ -40,7 +38,7 @@ const DIRECTIVES = [];
     DelonFormModule,
     // third libs
     ...THIRDMODULES,
-    SelfDefineModule,
+    SharedDefineModule,
   ],
   declarations: [
     // your components
@@ -56,11 +54,12 @@ const DIRECTIVES = [];
     DelonABCModule,
     DelonACLModule,
     DelonFormModule,
+    SharedDefineModule,
     // third libs
     ...THIRDMODULES,
     // your components
     ...COMPONENTS,
     ...DIRECTIVES,
-  ],
+  ]
 })
 export class SharedModule { }

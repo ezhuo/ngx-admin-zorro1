@@ -130,8 +130,8 @@ export class UserLoginComponent implements OnDestroy {
           },
           error => {
             console.error('login.component:', error);
-            if (error.message2) {
-              return this.error = error.message_cn;
+            if (error && error.message2) {
+              return this.error = error.message2;
             }
             return this.error = `账户或密码错误`;
           }

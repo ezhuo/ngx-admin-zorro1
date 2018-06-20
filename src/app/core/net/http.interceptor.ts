@@ -14,13 +14,12 @@ import {
 } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TokenService } from '../data/token.service';
-import * as helper from '../helpers';
 import { UserService } from '../data/users.service';
 import { SweetAlertService } from '../utils/sweetalert2.service';
 import { Observable, of, throwError } from 'rxjs';
 import { mergeMap, catchError } from 'rxjs/operators';
-// import { HttpService } from './http.service';
 import * as configInc from '../config.inc';
+import * as helper from '../helpers';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -82,15 +81,14 @@ export class AuthInterceptor implements HttpInterceptor {
         return this.httpResponseError(authReq, err);
       }),
     );
-
   }
 
   private httpResponseSuccess(authReq, event: HttpResponse<any>): Observable<any> {
+    let $message = '';
     try {
       // this.httpService.end();
       const $http_code = event.status;
       const $notice = 'info';
-      let $message = '';
       const data = event.body;
       this.noticeService.clear();
 
@@ -125,16 +123,15 @@ export class AuthInterceptor implements HttpInterceptor {
     } catch (e) {
       console.error(e);
     }
-    event.body.message2 = $message;
-    return of(event);
+    return of(Object.assign(event, { message2: $message }));
   }
 
   private httpResponseError(authReq, err: HttpErrorResponse): Observable<any> {
+    let $message = '';
     try {
       // this.httpService.end();
       const $http_code = err.status;
       let $notice = 'error';
-      let $message = '';
       const data = err.error;
       this.noticeService.clear();
 
@@ -190,16 +187,14 @@ export class AuthInterceptor implements HttpInterceptor {
         case 504:
           break;
       }
-
       if ($message && $notice) {
         this.noticeService['notice_' + $notice]($message);
       }
     } catch (e) {
       console.error(e);
     }
-    err.message2 = $message;
-    console.log(err);
-    return throwError(err);
-  }
 
+    console.log(err);
+    return throwError(Object.assign(err, { message2: $message }));
+  }
 }

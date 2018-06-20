@@ -3,7 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { NoticeService } from '../utils/notice.service';
 import { http, menus } from '../config.inc';
 import Storage from '../helpers/storage';
-import { JwtHelper } from 'angular2-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserService } from './users.service';
 import * as helper from '@helpers';
 import { MenuService, SettingsService, Menu } from '@delon/theme';
@@ -14,7 +14,7 @@ export class TokenService {
   protected __isAuth: Boolean = false;
   protected __local = Storage.local();
   protected __session = Storage.session();
-  protected jwtHelper: JwtHelper = new JwtHelper();
+  protected jwtHelper: JwtHelperService = new JwtHelperService();
   protected __menu: Menu[];
 
   constructor(

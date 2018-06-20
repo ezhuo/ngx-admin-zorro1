@@ -3,10 +3,10 @@ import * as helpers from '@helpers';
 import { HttpService } from '@core/net/http.service';
 import { SweetAlertService } from '@core/utils/sweetalert2.service';
 import { NoticeService } from '@core/utils/notice.service';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
-@Directive({ selector: '[appJstree]' })
-export class JsTreeDirective implements OnInit, OnDestroy, OnChanges {
+@Directive({ selector: '[dt-tree]' })
+export class DtTreeDirective implements OnInit, OnDestroy, OnChanges {
     op: any = {};
     data$: any = {};
     $container: any;

@@ -29,12 +29,6 @@
           ]
         },
         {
-          "text": "快捷菜单",
-          "icon": "icon-rocket",
-          "shortcut_root": true,
-          "children": []
-        },
-        {
           "text": "小部件",
           "link": "/app/widgets",
           "icon": "icon-grid",
@@ -161,14 +155,17 @@
             {
               "text": "Search List",
               "children": [{
-                  "link": "/app/pro/list/articles"
+                  "link": "/app/pro/list/articles",
+                  "text": "pro-search-article"
                 },
                 {
                   "link": "/app/pro/list/projects",
+                  "text": "pro-search-project",
                   "shortcut": true
                 },
                 {
-                  "link": "/app/pro/list/applications"
+                  "link": "/app/pro/list/applications",
+                  "text": "pro-search-app"
                 }
               ]
             }
@@ -278,6 +275,29 @@
           ]
         }
       ]
+    },
+    {
+      "text": "自定义部分",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [{
+        "text": "客户管理",
+        "link": "/app/customer",
+        "icon": "icon-cup",
+        "children": [{
+            "text": "Help Center",
+            "link": "/app/customer/helpcenter"
+          },
+          {
+            "text": "Settings",
+            "link": "/app/customer/settings"
+          },
+          {
+            "text": "account",
+            "link": "/app/customer/account"
+          }
+        ]
+      }]
     }
   ]
 }
