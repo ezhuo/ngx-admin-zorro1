@@ -38,8 +38,8 @@
 <form nz-form [nzLayout]="'inline'" class="search-form">
   <nz-form-item>
     <nz-form-control>
-      <ueditor [(ngModel)]="html" [config]="custom"></ueditor>
-      {{html }}
+      <ckeditor [(ngModel)]="html" [readonly]="false" debounce="500" name='ckedit'></ckeditor>
+    fdsafdsa  {{html }}fdsafd
     </nz-form-control>
   </nz-form-item>
 </form>

@@ -4,6 +4,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
 import { UEditorModule } from 'ngx-ueditor';
 import { NgxTinymceModule } from 'ngx-tinymce';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
     imports: [
@@ -38,5 +39,6 @@ export const ThirdComponentModuleList = [
     NgZorroAntdModule,
     CountdownModule,
     UEditorModule,
-    NgxTinymceModule
+    NgxTinymceModule,
+    CKEditorModule
 ];

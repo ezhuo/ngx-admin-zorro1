@@ -66,9 +66,5 @@ export class AccountComponent extends ParentIndexComponent {
   }
 
   html = ``;
-  custom: any = {
-    toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold', 'button']],
-  };
-
 
 }
