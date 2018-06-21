@@ -10,6 +10,7 @@ import { ParentIndexComponent } from '@routes/parent/parent.index.component';
 })
 export class AccountComponent extends ParentIndexComponent {
   @ViewChild('st') st: SimpleTableComponent;
+
   s: any = {
     pi: 1,
     ps: 10,
@@ -64,7 +65,10 @@ export class AccountComponent extends ParentIndexComponent {
     console.log('b', a);
   }
 
-  test2() {
+  html = ``;
+  custom: any = {
+    toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold', 'button']],
+  };
 
-  }
+
 }

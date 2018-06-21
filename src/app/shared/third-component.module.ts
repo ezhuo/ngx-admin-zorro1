@@ -1,5 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { CountdownModule } from 'ngx-countdown';
 import { UEditorModule } from 'ngx-ueditor';
 import { NgxTinymceModule } from 'ngx-tinymce';
 
@@ -25,8 +27,16 @@ import { NgxTinymceModule } from 'ngx-tinymce';
 })
 export class ThirdComponentModule {
     static forRoot(): ModuleWithProviders {
-        return { ngModule: ThirdComponentModule };
+        return <ModuleWithProviders>{
+            ngModule: ThirdComponentModule,
+            providers: []
+        };
     }
 }
 
-export const ThirdComponentModuleList = [UEditorModule, NgxTinymceModule];
+export const ThirdComponentModuleList = [
+    NgZorroAntdModule,
+    CountdownModule,
+    UEditorModule,
+    NgxTinymceModule
+];

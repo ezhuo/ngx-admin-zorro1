@@ -8,53 +8,48 @@ import { DelonABCModule } from '@delon/abc';
 import { DelonACLModule } from '@delon/acl';
 import { DelonFormModule } from '@delon/form';
 
+import { ModalService } from '@core/utils/modal.service';
+import { ThemeModule } from '@theme/theme.module';
+
 // region: third libs
-import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { CountdownModule } from 'ngx-countdown';
-import { SharedDefineModule } from '@shared/shared-define.module';
+
 import { ThirdComponentModuleList } from '@shared/third-component.module';
 
 const THIRDMODULES = [
-  NgZorroAntdModule,
-  CountdownModule,
   ...ThirdComponentModuleList
 ];
 // endregion
 
-// region: your componets & directives
+// region: your Modules & componets & directives & providers 
+const MODULES = [
+  CommonModule, FormsModule, RouterModule, ReactiveFormsModule,
+  DelonABCModule, DelonACLModule, DelonFormModule,
+  ThemeModule
+];
 const COMPONENTS = [];
 const DIRECTIVES = [];
+const PROVIDERS = [ModalService];
 // endregion
+
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    ReactiveFormsModule,
+    ...MODULES,
     AlainThemeModule.forChild(),
-    DelonABCModule,
-    DelonACLModule,
-    DelonFormModule,
     // third libs
     ...THIRDMODULES,
-    SharedDefineModule,
   ],
   declarations: [
     // your components
     ...COMPONENTS,
     ...DIRECTIVES,
   ],
+  providers: [
+    ...PROVIDERS
+  ],
   exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
+    ...MODULES,
     AlainThemeModule,
-    DelonABCModule,
-    DelonACLModule,
-    DelonFormModule,
-    SharedDefineModule,
     // third libs
     ...THIRDMODULES,
     // your components

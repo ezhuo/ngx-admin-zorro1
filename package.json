@@ -23,8 +23,8 @@
   "scripts": {
     "precommit2": "npm run lint-staged",
     "ng": "ng",
-    "start": "ng serve -o",
-    "hmr": "ng serve -c=hmr",
+    "start": "ng serve -o --proxy-config proxy.conf.json",
+    "hmr": "ng serve -c=hmr --proxy-config proxy.conf.json",
     "build": "ng build --prod --build-optimizer",
     "analyze": "ng build --prod --build-optimizer --stats-json",
     "lint": "npm run lint:ts && npm run lint:style",
